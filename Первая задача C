@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int N, K, L;
+    
+    
+    printf("Введите размер массива N: \n");
+    scanf("%d", &N);
+
+    int A[N]; 
+
+    
+    printf("Введите %d элементов массива:\n", N);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &A[i]);
+    }
+
+    
+    printf("Введите K и L (1 ≤ K ≤ L ≤ %d): \n", N);
+    scanf("%d %d", &K, &L);
+
+    
+    if (K < 1 || L > N || K > L) {
+        printf("Ошибка \n");
+        return 1; 
+    }
+
+    double sum = 0;
+    for (int i = K - 1; i < L; i++) { 
+        sum += A[i];
+    }
+
+    double av = sum / (L - K + 1); 
+
+    printf("Среднее арифметическое элементов с номерами от %d до %d: %.2f\n", K, L, av);
+
+    return 0;
+}
