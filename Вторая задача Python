@@ -1,0 +1,18 @@
+def ins(arr, d):
+    p = 0
+    while p < len(arr) and arr[p] < d:
+        p += 1
+    arr.insert(p, d)
+
+n = int(input("Введите размер массива N: "))
+
+print(f"Введите {n} элементов массива (упорядоченных по возрастанию):")
+arr = list(map(int, input().split()))
+
+if len(arr) != n:
+    print("Ошибка")
+else:
+    d = int(input("Введите число d для вставки: "))
+    ins(arr, d)
+    print("Массив после вставки:")
+    print(arr)
